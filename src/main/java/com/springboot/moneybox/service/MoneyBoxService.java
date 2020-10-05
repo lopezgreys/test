@@ -47,12 +47,12 @@ public class MoneyBoxService {
 	
 	/* Devuelve el total en dinero por denominación */
 	public Integer sumByDenomination(Integer denomination) {		
-		return moneybox.getCoins().stream().filter(moneda -> moneda.getDenomination()==denomination).mapToInt(m -> m.getDenomination()).sum();
+		return moneybox.getCoins().stream().filter(coin -> coin.getDenomination()==denomination).mapToInt(c -> c.getDenomination()).sum();
 	}
 
 	/* Número total de monedas por denominación */
 	public int coinsByDenomination(int denomination) {
-		return (int) moneybox.getCoins().stream().filter(moneda -> moneda.getDenomination()==denomination).mapToInt(m -> m.getDenomination()).count();
+		return (int) moneybox.getCoins().stream().filter(coin -> coin.getDenomination()==denomination).mapToInt(c -> c.getDenomination()).count();
 	}
 	
 	public String showName() {
